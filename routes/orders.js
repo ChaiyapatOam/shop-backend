@@ -12,19 +12,13 @@ router.get("/order", async (req, res) => {
 router.post("/order", async (req, res) => {
   let order = new Order({
     name: req.body.name,
-    price: req.body.price,
-    detail: req.body.detail,
-    image: req.body.image,
+    address: req.body.address,
+    phone: req.body.phone,
+    cart: req.body.cart,
+    total: req.body.total,
   });
   order = await order.save();
   res.send(order);
 });
 
-
 module.exports = router;
-
-// CRUD
-// Create
-// Read
-// Update
-// Delete
